@@ -1,0 +1,57 @@
+<head>
+    <title>Forms Example</title>
+</head>
+<link rel="stylesheet" href="styleform.css">
+<body>
+    <h4>Contarct Form</h4>
+    <form action="" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+        <br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+<br>
+        <label for="project">Project Details:</label>
+  <textarea id="project" name="project" rows="5" cols="30"></textarea><br><br>
+<br>
+  <label for="start_date">Start Date:</label>
+  <input type="date" id="start_date" name="start_date"><br><br>
+<br>
+  <label for="end_date">End Date:</label>
+  <input type="date" id="end_date" name="end_date"><br><br>
+  <input type="checkbox" id="accept" name="accept">
+  <label for="accept">I accept the terms and conditions of this contract.</label><br><br>
+<input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </form>
+    <script src="script.js">   
+    const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.querySelector('#name').value;
+  const password = document.querySelector('#password').value;
+  const email = document.querySelector('#email').value;
+  const dob = document.querySelector('#dob').value;
+  const project = document.querySelector('#project').value;
+  const startDate = document.querySelector('#start_date').value;
+  const endDate = document.querySelector('#end_date').value;
+  const accept = document.querySelector('#accept').checked;
+
+  if (name === '' || password === '' || email === '' || dob === '' || project === '' || startDate === '' || endDate === '') {
+    alert('Please fill out all fields');
+  } else if (!accept) {
+    alert('Please accept the terms and conditions');
+  } else {
+    alert('Form submitted successfully');
+  }
+});
+</script>
+</body>
+</html>
